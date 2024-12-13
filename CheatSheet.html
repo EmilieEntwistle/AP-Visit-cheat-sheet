@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Cheat Sheet</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Podkova:wght@400;700&display=swap');
+        body {
+            font-family: 'Podkova', serif;
+            margin: 20px;
+            background-color: #f8f7f2;
+        }
+        h1 {
+            text-align: center;
+            color: #c23452;
+        }
+        form {
+            max-width: 800px;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #c23452;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #c23452;
+            color: #f8f7f2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            font-family: 'Podkova', serif;
+        }
+        button:hover {
+            background-color: #a62b45;
+        }
+    </style>
+</head>
+<body>
+    <h1>Visit Cheat Sheet</h1>
+    <form id="visit-form">
+        <h2>General Property Information</h2>
+        <div class="form-group">
+            <label for="PropName">Property Name</label>
+            <input type="text" id="PropName" name="Property Name">
+        </div>
+        <div class="form-group">
+            <label for="prixPublic">Prix Public</label>
+            <input type="text" id="prixPublic" name="Prix Public">
+        </div>
+        <div class="form-group">
+            <label for="cadastralParcels">Cadastral Parcels</label>
+            <input type="text" id="cadastralParcels" name="Cadastral Parcels">
+        </div>
+        <div class="form-group">
+            <label for="zonesAround">Zones around (PLU)</label>
+            <input type="text" id="zonesAround" name="Zones around (PLU)">
+        </div>
+        <div class="form-group">
+            <label for="zoneRules">Zone Rules</label>
+            <input type="text" id="zoneRules" name="Zone Rules">
+        </div>
+        <div class="form-group">
+            <label for="pprn">PPRN</label>
+            <input type="text" id="pprn" name="PPRN">
+        </div>
+        <div class="form-group">
+            <label for="reconstructionRules">Reconstruction Rules</label>
+            <input type="text" id="reconstructionRules" name="Reconstruction Rules">
+        </div>
+        <div class="form-group">
+            <label for="servitudes">Servitudes</label>
+            <input type="text" id="servitudes" name="Servitudes">
+        </div>
+        <div class="form-group">
+            <label for="totalM2">Total m²</label>
+            <input type="text" id="totalM2" name="Total m²">
+        </div>
+        <div class="form-group">
+            <label for="liveableM2">Liveable m²</label>
+            <input type="text" id="liveableM2" name="Liveable m²">
+        </div>
+        <div class="form-group">
+            <label for="landM2">Land m²</label>
+            <input type="text" id="landM2" name="Land m²">
+        </div>
+        <div class="form-group">
+            <label for="N°Beds">N° of bedrooms </label>
+            <select id="N°Beds" name="N° of bedrooms">
+                <option value=""> </option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="N°Baths">N° of Bathrooms</label>
+            <select id="N°Baths" name="N° of bathrooms">
+                <option value=""> </option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Kitchen">Kitchen (changed/renovated)</label>
+            <input type="text" id="Kitchen" name="Kitchen">
+        </div>
+        <div class="form-group">
+            <label for="yearOfConstruction">Year of construction</label>
+            <input type="text" id="yearOfConstruction" name="Year of construction">
+        </div>
+        <div class="form-group">
+            <label for="renovations">Renovations/Maintenance</label>
+            <input type="text" id="renovations" name="Renovations/Maintenance">
+            
+        </div>
+        <div class="form-group">
+            <label for="daactDate">Declaration d’achèvement (DAACT)</label>
+            <input type="text" id="daactDate" name="Declaration d’achèvement (DAACT)">
+        </div>
+        <div class="form-group">
+            <label for="CertificatDeConformite">Certificat de conformité?</label>
+            <input type="text" id="CertificatDeConformite" name="Certificat de conformité?">
+        </div>
+        <div class="form-group">
+            <label for="propertyOwner">Property owner n°</label>
+            <input type="text" id="propertyOwner" name="Property owner n°">
+        </div>
+        <div class="form-group">
+            <label for="dpe-letter">DPE </label>
+            <select id="dpe-letter" name="DPE">
+                <option value=""> </option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="dpeSuggestions">DPE suggestions</label>
+            <input type="text" id="dpeSuggestions" name="DPE suggestions">
+            
+        </div>
+        <div class="form-group">
+            <label for="DpeAudit">DPE Audit</label>
+            <input type="text" id="dpe" name="DPE Audit">
+        </div>
+        <div class="form-group">
+            <label for="DpeAuditRenov">DPE Audit Renovation Cost</label>
+            <input type="text" id="DpeAuditRenov" name="DPE Audit Renovation Cost">
+        </div>
+        <div class="form-group">
+            <label for="drainage">Drainage</label>
+            <select id="drainage" name="Drainage">
+                <option value=""></option>
+                <option value="Mains Drains">Mains Drains</option>
+                <option value="Septic Tank">Septic Tank</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="drainageConform">Drainage Conformity</label>
+            <input type="text" id="drainageConform" name="Drainage Conformity">
+        </div>
+        <div class="form-group">
+            <label for="electricityBill">Electricity bill P/A</label>
+            <input type="text" id="electricityBill" name="Electricity bill P/A">
+        </div>
+        <div class="form-group">
+            <label for="waterBill">Water bill P/A</label>
+            <input type="text" id="waterBill" name="Water bill P/A">
+        </div>
+        <div class="form-group">
+            <label for="heatingType">Heating type</label>
+            <input type="text" id="heatingType" name="Heating type">
+        </div>
+        <div class="form-group">
+            <label for="heatingZones">Heating zones</label>
+            <input type="text" id="heatingZones" name="Heating zones">
+        </div>
+        <div class="form-group">
+            <label for="HotWater">Hot Water</label>
+            <input type="text" id="HotWater" name="Hot Water">
+        </div>
+        <div class="form-group">
+            <label for="HotWaterTank">Tank on Demand/Continuous?</label>
+            <input type="text" id="HotWaterTank" name="Tank on Demand/Continuous?">
+        </div>
+        <div class="form-group">
+            <label for="Garage">Garage</label>
+            <input type="text" id="Garage" name="Garage">
+        </div>
+        <div class="form-group">
+            <label for="SkiLocker">Ski Locker</label>
+            <input type="text" id="SkiLocker" name="Ski SkiLocker">
+        </div>
+        <div class="form-group">
+            <label for="Cave">Cave</label>
+            <input type="text" id="Cave" name="Cave">
+        </div>
+        <div class="form-group">
+            <label for="Chimney">Chimney/Ramonage?</label>
+            <input type="text" id="Chimney" name="Chimney/Ramonage?">
+        </div>
+        <div class="form-group">
+            <label for="Furniture">Furniture Included?</label>
+            <input type="text" id="Furniture" name="Furniture Included?">
+        </div>
+        <div class="form-group">
+            <label for="TaxHab">Taxe d'habitation</label>
+            <input type="text" id="TaxHab" name="Taxe d'habitation">
+        </div>
+        <div class="form-group">
+            <label for="TaxFonc">Taxe Foncière</label>
+            <input type="text" id="TaxFonc" name="Taxe Foncière">
+        </div>
+        <div class="form-group">
+            <label for="SaleReas">Reason of sale</label>
+            <input type="text" id="SaleReas" name="Reason of Sale">
+        </div>
+        <div class="form-group">
+            <label for="Neighbours">Neighbours</label>
+            <input type="text" id="Neighbours" name="Neighbours">
+        </div>
+        <div class="form-group">
+            <label for="specialFeatures">Special features</label>
+            <input type="text" id="specialFeatures" name="Special features">
+        </div>
+        <div class="form-group">
+            <label for="AdditionalInfo">Additional Info</label>
+            <input type="text" id="AdditionalInfo" name="Additional Info">
+        </div>
+        
+        <h2>Coprop Information</h2>
+
+        <div class="form-group">
+            <label for="annualCharges">Annual Charges</label>
+            <input type="text" id="annualCharges" name="Annual Charges">
+        </div>
+        <div class="form-group">
+            <label for="procedureEnCours">Procedure en cours</label>
+            <input type="text" id="procedureEnCours" name="Procedure en cours">
+            
+        </div>
+        <div class="form-group">
+            <label for="costsOfProcedure">Costs of Procedure</label>
+            <input type="text" id="costsOfProcedure" name="Costs of Procedure">
+        </div>
+        <div class="form-group">
+            <label for="numberOfLots">Number of Lots</label>
+            <input type="text" id="numberOfLots" name="Number of Lots">
+        </div>
+
+        <h2>Rental Incomes</h2>
+        <div class="form-group">
+            <label for="weeksInSummer">Weeks in Summer</label>
+            <input type="text" id="weeksInSummer" name="Weeks in Summer">
+        </div>
+        <div class="form-group">
+            <label for="incomeFromSummer">Income from Summer</label>
+            <input type="text" id="incomeFromSummer" name="Income from Summer">
+        </div>
+        <div class="form-group">
+            <label for="weeksInWinter">Weeks in Winter</label>
+            <input type="text" id="weeksInWinter" name="Weeks in Winter">
+        </div>
+        <div class="form-group">
+            <label for="incomeFromWinter">Income from Winter</label>
+            <input type="text" id="incomeFromWinter" name="Income from Winter">
+        </div>
+        <div class="form-group">
+            <label for="totalRentalIncome">Total Rental Income</label>
+            <input type="text" id="totalRentalIncome" name="Total Rental Income">
+        </div>
+
+        <button type="button" onclick="generatePDF()">Generate PDF</button>
+        
+    </form>
+
+    
+    <script>
+        async function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const logoUrl = "https://www.france-erp.com/upload/logos/5960/logo.png";
+
+    // Add the logo to the top left corner (x, y position, width, height)
+    doc.addImage(logoUrl, 'PNG', 10, 10, 17, 17);
+
+    // Fetch form data
+    const form = document.getElementById('visit-form');
+    const formData = new FormData(form);
+
+    // Prepare table data
+    const generalInfo = [];
+    const copropInfo = [];
+    const rentalIncomes = [];
+
+    formData.forEach((value, key) => {
+        // General Property Information
+        if ([
+            'Property Name', 
+            'Prix Public', 
+            'Cadastral Parcels', 
+            'Zones around (PLU)', 
+            'Zone Rules',  
+            'PPRN', 
+            'Reconstruction Rules', 
+            'Servitudes', 
+            'Year of construction', 
+            'Renovations/Maintenance', 
+            'Total m²',
+            'Liveable m²', 
+            'Land m²', 
+            'N° of bedrooms', 
+            'N° of bathrooms', 
+            'Kitchen', 
+            'Heating type', 
+            'Hot Water', 
+            'Garage', 
+            'Ski Locker', 
+            'Chimney/Ramonage?', 
+            'Furniture Included?', 
+            'Taxe d\'habitation', 
+            'Taxe Foncière', 
+            'Special features', 
+            'Reason of Sale', 
+            'Property owner n°', 
+            'DPE', 
+            'DPE suggestions', 
+            'DPE Audit', 
+            'DPE Audit Renovation Cost', 
+            'Drainage Conformity', 
+            'Electricity bill P/A', 
+            'Water bill P/A',
+            'Cave',
+            'Neighbours',
+            'Additional Info'
+        ].includes(key)) {
+            generalInfo.push([key, value || 'N/A']);
+        } 
+        // Coprop Information
+        else if ([
+            'Annual Charges', 
+            'Procedure en cours', 
+            'Costs of Procedure', 
+            'Number of Lots'
+        ].includes(key)) {
+            copropInfo.push([key, value || 'N/A']);
+        } 
+        // Rental Incomes
+        else if ([
+            'Weeks in Summer', 
+            'Income from Summer', 
+            'Weeks in Winter', 
+            'Income from Winter', 
+            'Total Rental Income'
+        ].includes(key)) {
+            rentalIncomes.push([key, value || 'N/A']);
+        }
+    });
+
+   
+
+    // Add title
+    doc.setFontSize(18);
+    doc.setTextColor('#c23452');
+    doc.text('Visit Cheat Sheet', 105, 20, { align: 'center' });
+
+    // Add General Property Information Table
+    doc.setFontSize(14);
+    doc.text('General Property Information', 10, 30);
+    doc.autoTable({
+        head: [['Property Info', 'Details']],
+        body: generalInfo,
+        startY: 35,
+        headStyles: { fillColor: '#c23452', textColor: '#f8f7f2', fontStyle: 'bold' },
+        bodyStyles: { fillColor: '#f8f7f2', textColor: '#000000' },
+        alternateRowStyles: { fillColor: '#fbecee' },
+    });
+
+    // Add Coprop Information Table
+    let copropStartY = doc.previousAutoTable.finalY + 10;
+    doc.text('Coprop Information', 10, copropStartY);
+    doc.autoTable({
+        head: [['Coprop Information', 'Details']],
+        body: copropInfo,
+        startY: copropStartY + 5,
+        headStyles: { fillColor: '#c23452', textColor: '#f8f7f2', fontStyle: 'bold' },
+        bodyStyles: { fillColor: '#f8f7f2', textColor: '#000000' },
+        alternateRowStyles: { fillColor: '#fbecee' },
+    });
+
+    // Add Rental Incomes Table
+    let rentalStartY = doc.previousAutoTable.finalY + 10;
+    doc.text('Rental Incomes', 10, rentalStartY);
+    doc.autoTable({
+        head: [['Rental incomes', 'Details']],
+        body: rentalIncomes,
+        startY: rentalStartY + 5,
+        headStyles: { fillColor: '#c23452', textColor: '#f8f7f2', fontStyle: 'bold' },
+        bodyStyles: { fillColor: '#f8f7f2', textColor: '#000000' },
+        alternateRowStyles: { fillColor: '#fbecee' },
+    });
+
+    // Save PDF
+    doc.save('Visit_Cheat_Sheet.pdf');
+}
+
+    </script>
+    
+</body>
+</html>
+
